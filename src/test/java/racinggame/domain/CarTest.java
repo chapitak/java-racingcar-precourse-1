@@ -13,7 +13,7 @@ class CarTest {
     @DisplayName("4 이상의 정수를 입력받으면 전진하고 3이하의 정수을 입력받으면 멈춘다")
     void moveTest(Integer moveCondition, Integer position) {
         // given
-        Car car1 = Car.from("Car1");
+        Car car1 = Car.from(CarName.from("Car1"));
 
         // when
         car1.move(moveCondition);
