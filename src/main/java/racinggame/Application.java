@@ -1,7 +1,13 @@
 package racinggame;
 
+import racinggame.controller.RacingGameController;
+import racinggame.service.RacingGameService;
+import racinggame.view.RacingGameConsoleView;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO 자동차 경주 게임 구현
+        RacingGameService racingGameService = new RacingGameService();
+        RacingGameController racingGameController = new RacingGameController(new RacingGameConsoleView(), racingGameService);
+        racingGameController.run();
     }
 }
