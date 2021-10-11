@@ -17,5 +17,6 @@ public class RacingGameController {
     public void run() {
         String carNameInput = racingGameView.inputCarNames();
         CarNames carNames = CarNames.parseNames(carNameInput);
+        int moveCount = racingGameView.inputMoveCount();
     }
 }
