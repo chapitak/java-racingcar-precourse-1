@@ -13,6 +13,7 @@ public class CarNames {
 
     /**
      * 문자열을 파싱하여 CarNames 객체를 만들어 반환한다
+     *
      * @param carNameInput
      * @return
      */
@@ -24,5 +25,13 @@ public class CarNames {
                     .from(splitedCarName));
         }
         return new CarNames(carNames);
+    }
+
+    public CarName get(int i) {
+        return carNames.get(i);
+    }
+
+    public int size() {
+        return carNames.size();
     }
 }

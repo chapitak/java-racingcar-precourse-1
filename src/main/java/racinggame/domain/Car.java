@@ -23,6 +23,10 @@ public class Car {
         return position;
     }
 
+    public CarName getName() {
+        return carName;
+    }
+
     /**
      * moveCondition을 입력받고 조건에 따라 현재 객체의 position을 증가시킨다
      */
@@ -31,4 +35,5 @@ public class Car {
             position++;
         }
     }
+
 }

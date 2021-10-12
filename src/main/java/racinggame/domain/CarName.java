@@ -36,4 +36,8 @@ public class CarName {
             throw new NameLengthExcessException();
         }
     }
+
+    public String getCarName() {
+        return carName;
+    }
 }

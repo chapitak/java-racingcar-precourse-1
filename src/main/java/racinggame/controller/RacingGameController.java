@@ -1,6 +1,6 @@
 package racinggame.controller;
 
-import racinggame.domain.CarNames;
+import racinggame.domain.Cars;
 import racinggame.service.RacingGameService;
 import racinggame.view.RacingGameView;
 
@@ -16,7 +16,10 @@ public class RacingGameController {
 
     public void run() {
         String carNameInput = racingGameView.inputCarNames();
-        CarNames carNames = CarNames.parseNames(carNameInput);
+        Cars cars = racingGameService.makeCars(carNameInput);
         int moveCount = racingGameView.inputMoveCount();
+        for (int i = 0; i < moveCount; i++) {
+            String racingProcess = racingGameService.race(cars, moveCount);
+        }
     }
 }
