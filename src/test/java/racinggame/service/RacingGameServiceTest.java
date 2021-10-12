@@ -1,11 +1,9 @@
 package racinggame.service;
 
 import org.junit.jupiter.api.Test;
-import racinggame.domain.Car;
 import racinggame.domain.Cars;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class RacingGameServiceTest {
 

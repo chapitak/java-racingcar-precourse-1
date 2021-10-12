@@ -4,6 +4,10 @@ import nextstep.utils.Randoms;
 
 public class Car {
     public static final int MOVE_CONDITION_THRESHOLD = 4;
+    public static final String PROCESS_DELIMITER = " : ";
+    public static final String PROGRESS_BAR = "-";
+    public static final int START_INCLUSIVE_RANDOM_RANGE = 0;
+    public static final int END_INCLUSIVE_RANDOM_RANGE = 9;
     private final CarName carName;
     private int position = 0;
 
@@ -38,16 +42,24 @@ public class Car {
         }
     }
 
+    /**
+     * 주어진 범위 내의 랜덤한 숫자를 입력으로 받아 move 함수에 따른 랜덤한 움직임을 가진다
+     */
     public void randomMove() {
-        move(Randoms.pickNumberInRange(0, 9));
+        move(Randoms.pickNumberInRange(START_INCLUSIVE_RANDOM_RANGE, END_INCLUSIVE_RANDOM_RANGE));
     }
 
+    /**
+     * 자동차 경주 진행상황에 대한 문자열을 반환한다
+     *
+     * @return
+     */
     public String getProcessString() {
         StringBuilder sb = new StringBuilder();
         sb.append(carName.getCarName());
-        sb.append(":");
+        sb.append(PROCESS_DELIMITER);
         for (int i = 0; i < position; i++) {
-            sb.append("-");
+            sb.append(PROGRESS_BAR);
         }
         return sb.toString();
     }

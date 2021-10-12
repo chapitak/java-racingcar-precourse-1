@@ -1,7 +1,6 @@
 package racinggame.domain;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -24,7 +23,7 @@ class CarTest {
     }
 
     @ParameterizedTest
-    @CsvSource(value = {"0;Car1:", "5;Car1:-"}, delimiter = ';')
+    @CsvSource(value = {"5;Car1 : -"}, delimiter = ';')
     @DisplayName("진행상황을 출력한다")
     void getProcessString(Integer moveCondition, String processString) {
         // given

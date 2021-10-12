@@ -23,5 +23,6 @@ public class RacingGameController {
             racingGameService.race(cars);
             racingGameView.printRaceProcess(cars.getProcessString());
         }
+        racingGameView.printWinner(cars.getWinnerString());
     }
 }

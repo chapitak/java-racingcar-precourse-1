@@ -1,7 +1,5 @@
 package racinggame.view;
 
-import racinggame.domain.Cars;
-
 public interface RacingGameView {
     String inputCarNames();
 
@@ -10,4 +8,6 @@ public interface RacingGameView {
     void printProcessHeader();
 
     void printRaceProcess(String processString);
+
+    void printWinner(String winnerString);
 }
