@@ -21,4 +21,19 @@ public class Cars {
     public int size() {
         return cars.size();
     }
+
+    public void randomMove() {
+        for (Car car : cars) {
+            car.randomMove();
+        }
+    }
+
+    public String getProcessString() {
+        StringBuilder sb = new StringBuilder();
+        for (Car car : cars) {
+            sb.append(car.getProcessString());
+            sb.append(System.lineSeparator());
+        }
+        return sb.toString();
+    }
 }

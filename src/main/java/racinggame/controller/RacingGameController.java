@@ -18,8 +18,10 @@ public class RacingGameController {
         String carNameInput = racingGameView.inputCarNames();
         Cars cars = racingGameService.makeCars(carNameInput);
         int moveCount = racingGameView.inputMoveCount();
+        racingGameView.printProcessHeader();
         for (int i = 0; i < moveCount; i++) {
-            String racingProcess = racingGameService.race(cars, moveCount);
+            racingGameService.race(cars);
+            racingGameView.printRaceProcess(cars.getProcessString());
         }
     }
 }

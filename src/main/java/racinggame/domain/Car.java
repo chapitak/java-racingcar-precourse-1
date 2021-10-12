@@ -1,5 +1,7 @@
 package racinggame.domain;
 
+import nextstep.utils.Randoms;
+
 public class Car {
     public static final int MOVE_CONDITION_THRESHOLD = 4;
     private final CarName carName;
@@ -36,4 +38,17 @@ public class Car {
         }
     }
 
+    public void randomMove() {
+        move(Randoms.pickNumberInRange(0, 9));
+    }
+
+    public String getProcessString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(carName.getCarName());
+        sb.append(":");
+        for (int i = 0; i < position; i++) {
+            sb.append("-");
+        }
+        return sb.toString();
+    }
 }

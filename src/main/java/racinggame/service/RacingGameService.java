@@ -6,8 +6,8 @@ import racinggame.domain.Cars;
 
 public class RacingGameService {
 
-    public String race(Cars carNameInput, int moveCount) {
-        return null;
+    public void race(Cars cars) {
+        cars.randomMove();
     }
 
     public Cars makeCars(String carNameInput) {

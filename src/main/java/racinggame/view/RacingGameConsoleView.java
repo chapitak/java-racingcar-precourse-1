@@ -22,4 +22,14 @@ public class RacingGameConsoleView implements RacingGameView {
         }
         return moveCount;
     }
+
+    @Override
+    public void printProcessHeader() {
+        System.out.println("실행 결과");
+    }
+
+    @Override
+    public void printRaceProcess(String process) {
+        System.out.println(process);
+    }
 }
