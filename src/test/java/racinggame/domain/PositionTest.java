@@ -3,10 +3,8 @@ package racinggame.domain;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racinggame.exception.NegativePositionException;
-import racinggame.exception.NotIntegerInputException;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 
 class PositionTest {
 
