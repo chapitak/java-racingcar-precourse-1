@@ -1,6 +1,7 @@
 package racinggame.controller;
 
 import racinggame.domain.Cars;
+import racinggame.domain.MoveCount;
 import racinggame.service.RacingGameService;
 import racinggame.view.RacingGameView;
 
@@ -18,31 +19,30 @@ public class RacingGameController {
 
     public void run() {
         Cars cars = getCars();
-        int moveCount = getMoveCount();
+        MoveCount moveCount = getMoveCount();
         racingGameView.printProcessHeader();
-        for (int i = 0; i < moveCount; i++) {
+        for (int i = 0; i < moveCount.getMoveCount(); i++) {
             racingGameService.race(cars);
             racingGameView.printRaceProcess(cars.getProcessString());
         }
         racingGameView.printWinner(cars.getWinnerString());
     }
 
-    private int getMoveCount() {
-        int moveCount = -1;
-        while (!(moveCount >= 0)) {
+    private MoveCount getMoveCount() {
+        Optional<MoveCount> moveCount = Optional.empty();
+        while (!(moveCount.isPresent())) {
             moveCount = getMoveCountTry();
         }
-        return moveCount;
+        return moveCount.get();
     }
 
-    private int getMoveCountTry() {
-        int moveCount = -1;
+    private Optional<MoveCount> getMoveCountTry() {
         try {
-            moveCount = racingGameView.inputMoveCount();
+            return Optional.of(MoveCount.from(racingGameView.inputMoveCount()));
         } catch (RuntimeException e) {
             racingGameView.printErrorMessage(e.getMessage());
+            return Optional.empty();
         }
-        return moveCount;
     }
 
     private Cars getCars() {
