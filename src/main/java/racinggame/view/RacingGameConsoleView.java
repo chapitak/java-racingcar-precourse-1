@@ -1,7 +1,6 @@
 package racinggame.view;
 
 import nextstep.utils.Console;
-import racinggame.exception.NotIntegerInputException;
 
 public class RacingGameConsoleView implements RacingGameView {
 
@@ -12,15 +11,9 @@ public class RacingGameConsoleView implements RacingGameView {
     }
 
     @Override
-    public int inputMoveCount() {
+    public String inputMoveCount() {
         System.out.println("시도할 회수는 몇회인가요?");
-        int moveCount;
-        try {
-            moveCount = Integer.parseInt(Console.readLine());
-        } catch (RuntimeException e) {
-            throw new NotIntegerInputException();
-        }
-        return moveCount;
+        return Console.readLine();
     }
 
     @Override
