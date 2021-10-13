@@ -2,7 +2,7 @@ package racinggame.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import racinggame.exception.MoveCountUnderZeroException;
+import racinggame.exception.NegativeMoveCountException;
 import racinggame.exception.NotIntegerInputException;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -17,7 +17,7 @@ class MoveCountTest {
             MoveCount.from("-1");
         })
                 // then
-                .isInstanceOf(MoveCountUnderZeroException.class)
+                .isInstanceOf(NegativeMoveCountException.class)
                 .hasMessageContaining("0 이상의 숫자만 입력할 수 있습니다");
     }
 

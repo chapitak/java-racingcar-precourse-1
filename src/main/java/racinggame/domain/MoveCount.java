@@ -1,6 +1,6 @@
 package racinggame.domain;
 
-import racinggame.exception.MoveCountUnderZeroException;
+import racinggame.exception.NegativeMoveCountException;
 import racinggame.exception.NotIntegerInputException;
 
 public class MoveCount {
@@ -39,7 +39,7 @@ public class MoveCount {
      */
     private void validateUnderZero() {
         if (moveCount < 0) {
-            throw new MoveCountUnderZeroException();
+            throw new NegativeMoveCountException();
         }
     }
 

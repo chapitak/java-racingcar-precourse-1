@@ -4,8 +4,8 @@ import nextstep.utils.Console;
 
 public class RacingGameConsoleView implements RacingGameView {
 
-    public static final String MESSAGE_INPUT_CARNAMES = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,)기준으로 구분)";
-    public static final String MESSAGE_INPUT_MOVECOUNT = "시도할 회수는 몇회인가요?";
+    public static final String MESSAGE_INPUT_CAR_NAMES = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,)기준으로 구분)";
+    public static final String MESSAGE_INPUT_MOVE_COUNT = "시도할 회수는 몇회인가요?";
     public static final String MESSAGE_PROCESS_HEADER = "실행 결과";
     public static final String HEADER_ERROR = "[ERROR] ";
     public static final String MESSAGE_WINNER_1 = "최종 우승자는 ";
@@ -13,13 +13,13 @@ public class RacingGameConsoleView implements RacingGameView {
 
     @Override
     public String inputCarNames() {
-        System.out.println(MESSAGE_INPUT_CARNAMES);
+        System.out.println(MESSAGE_INPUT_CAR_NAMES);
         return Console.readLine();
     }
 
     @Override
     public String inputMoveCount() {
-        System.out.println(MESSAGE_INPUT_MOVECOUNT);
+        System.out.println(MESSAGE_INPUT_MOVE_COUNT);
         return Console.readLine();
     }
 

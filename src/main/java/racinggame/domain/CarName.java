@@ -3,7 +3,7 @@ package racinggame.domain;
 import racinggame.exception.NameLengthExcessException;
 
 public class CarName {
-    public static final int CARNAME_THRESHOLD = 5;
+    public static final int CAR_NAME_THRESHOLD = 5;
     private final String carName;
 
     /**
@@ -32,7 +32,7 @@ public class CarName {
      * @param carName
      */
     private void checkNameLength(String carName) {
-        if (carName.length() > CARNAME_THRESHOLD) {
+        if (carName.length() > CAR_NAME_THRESHOLD) {
             throw new NameLengthExcessException();
         }
     }
