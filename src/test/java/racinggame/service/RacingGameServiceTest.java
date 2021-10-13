@@ -1,5 +1,6 @@
 package racinggame.service;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racinggame.domain.Cars;
 
@@ -8,6 +9,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class RacingGameServiceTest {
 
     @Test
+    @DisplayName("쉼표로 분리된 문자열을 입력받아 자동차를 생성한다")
     void makeCars() {
         // given
         RacingGameService racingGameService = new RacingGameService();
