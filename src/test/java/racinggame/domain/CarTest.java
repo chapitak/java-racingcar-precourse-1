@@ -19,7 +19,7 @@ class CarTest {
         car1.move(moveCondition);
 
         // then
-        assertThat(car1.getPosition()).isEqualTo(position);
+        assertThat(car1.getPosition().isEqualTo(Position.from(position))).isTrue();
     }
 
     @ParameterizedTest

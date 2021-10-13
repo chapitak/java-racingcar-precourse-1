@@ -52,7 +52,7 @@ public class Cars {
      * @return 가장 position이 큰 자동차의 이름
      */
     public Cars getWinners() {
-        int maxPosition = 0;
+        Position maxPosition = Position.start();
         List<Car> winners = new ArrayList<>();
         for (Car car : cars) {
             maxPosition = getMaxPosition(maxPosition, winners, car);
@@ -68,13 +68,14 @@ public class Cars {
      * @param car
      * @return 가장 큰 position
      */
-    private int getMaxPosition(int maxPosition, List<Car> winners, Car car) {
-        if (maxPosition == car.getPosition()) {
+    private Position getMaxPosition(Position maxPosition, List<Car> winners, Car car) {
+        Position position = car.getPosition();
+        if (maxPosition.isEqualTo(position)) {
             winners.add(car);
         }
-        if (maxPosition < car.getPosition()) {
+        if (position.isBiggerThan(maxPosition)) {
             winners.clear();
-            maxPosition = car.getPosition();
+            maxPosition = position;
             winners.add(car);
         }
         return maxPosition;

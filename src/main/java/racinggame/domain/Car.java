@@ -9,9 +9,10 @@ public class Car {
     public static final int START_INCLUSIVE_RANDOM_RANGE = 0;
     public static final int END_INCLUSIVE_RANDOM_RANGE = 9;
     private final CarName carName;
-    private int position = 0;
+    private final Position position;
 
     public Car(CarName carName) {
+        this.position = Position.start();
         this.carName = carName;
     }
 
@@ -25,7 +26,7 @@ public class Car {
         return new Car(carName);
     }
 
-    public int getPosition() {
+    public Position getPosition() {
         return position;
     }
 
@@ -38,7 +39,7 @@ public class Car {
      */
     public void move(int moveCondition) {
         if (moveCondition >= MOVE_CONDITION_THRESHOLD) {
-            position++;
+            position.increase();
         }
     }
 
@@ -58,7 +59,7 @@ public class Car {
         StringBuilder sb = new StringBuilder();
         sb.append(carName.getCarName());
         sb.append(PROCESS_DELIMITER);
-        for (int i = 0; i < position; i++) {
+        for (int i = 0; i < position.getPosition(); i++) {
             sb.append(PROGRESS_BAR);
         }
         return sb.toString();
