@@ -3,6 +3,7 @@ package racinggame.domain;
 import racinggame.exception.NegativePositionException;
 
 public class Position {
+    public static final int START_POSITION = 0;
     private int position;
 
     public Position(int position) {
@@ -15,11 +16,11 @@ public class Position {
     }
 
     public static Position start() {
-        return new Position(0);
+        return new Position(START_POSITION);
     }
 
     private void validatePositionPositive(int position) {
-        if (position < 0) {
+        if (position < START_POSITION) {
             throw new NegativePositionException();
         }
     }
