@@ -37,4 +37,9 @@ public class RacingGameConsoleView implements RacingGameView {
     public void printWinner(String winnerString) {
         System.out.println("최종 우승자는 " + winnerString + " 입니다.");
     }
+
+    @Override
+    public void printErrorMessage(String message) {
+        System.out.println("[ERROR] " + message);
+    }
 }

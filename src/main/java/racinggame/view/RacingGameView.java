@@ -10,4 +10,6 @@ public interface RacingGameView {
     void printRaceProcess(String processString);
 
     void printWinner(String winnerString);
+
+    void printErrorMessage(String message);
 }
